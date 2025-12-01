@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanh toán - Shoppe</title>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/checkout.css">
+  <link rel="stylesheet" href="assets/font/fontawesome-free-6.4.0-web/css/all.min.css">
+</head>
+
+<body>
+  <div class="app">
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <div class="checkout-wrapper">
+      <div class="grid">
+        <div class="checkout-container">
+          <div class="checkout-left">
+            <h2 class="checkout-title"><i class="fas fa-map-marker-alt"></i> Địa chỉ giao hàng</h2>
+            <div class="form-group">
+              <label class="form-label">Họ tên</label>
+              <input type="text" class="form-control" value="Nguyễn Kiên Sơn">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Số điện thoại</label>
+              <input type="text" class="form-control" value="0987 654 321">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Địa chỉ chi tiết</label>
+              <input type="text" class="form-control" placeholder="Số nhà, đường, phường/xã...">
+            </div>
+
+            <h2 class="checkout-title" style="margin-top:50px"><i class="fas fa-credit-card"></i> Phương thức thanh toán
+            </h2>
+            <div class="payment-options">
+              <label class="payment-option active">
+                <input type="radio" name="pay" checked style="transform:scale(1.4)">
+                <span>Thanh toán khi nhận hàng (COD)</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="pay">
+                <span>Thẻ tín dụng / Thẻ ghi nợ</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="pay">
+                <span>ShopeePay / Ví điện tử</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="checkout-right">
+            <h2 class="checkout-title"><i class="fas fa-shopping-bag"></i> Đơn hàng (3 sản phẩm)</h2>
+            <div class="order-summary">
+              <div class="order-row">
+                <span>Loa Gaming LED RGB x1</span>
+                <span>999.000đ</span>
+              </div>
+              <div class="order-row">
+                <span>Bút laser 3 màu x2</span>
+                <span>200.000đ</span>
+              </div>
+              <div class="order-row" style="border-top:2px solid #eee;padding-top:20px">
+                <span>Phí vận chuyển</span>
+                <span>30.000đ</span>
+              </div>
+              <div class="order-row" style="margin-top:20px">
+                <strong>Tổng thanh toán:</strong>
+                <strong class="order-total-price">1.229.000đ</strong>
+              </div>
+            </div>
+            <button class="btn-place-order">ĐẶT HÀNG NGAY</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer-container"></div>
+  <script src="js/components.js"></script>
+</body>
+
+</html>

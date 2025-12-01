@@ -1,17 +1,26 @@
-:root{
+/* ===================== BASE.CSS MERGE HOÀN CHỈNH ===================== */
+
+:root {
     --white-color: #fff;
     --black-color: #000;
     --text-color: #333;
     --primary-color: #fe6333;
     --star-gold-color: #FFCE3E;
-    
-    --header-height:120px;
+
+    --header-height: 120px;
     --navbar-height: 40px;
     --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
 }
 
-*{
-    box-sizing: inherit;
+/* Reset */
+* { box-sizing: inherit; }
+
+html,
+body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0;
 }
 
 html {
@@ -20,55 +29,89 @@ html {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
-/* reponsive */
+
+/* ==================== GRID SYSTEM ==================== */
 .grid {
-    width: 1600px;
-    max-width: 100%;
-    margin: 0 auto;
-    
-}
-
-.grid__full-with{
     width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 12px;
+    box-sizing: border-box;
 }
 
-.grid__row{
+.grid__full-width { width: 100%; }
+
+.grid__row {
     display: flex;
-    flex-wrap: nowrap;
-    margin-left: -5px;
-    margin-right: -5px;
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-right: -8px;
 }
 
-/* test */
-
-.grid__column-2{
-    margin-left: 5px;
-    margin-right: 5px;
-    width: 16.6667%;
-}
-.grid__column-2-4{
-    margin-left: 5px;
-    margin-right: 5px;
-    width: 19.25%;
+/* ====== COLUMN CŨ (giữ để không lỗi trang khác) ====== */
+.grid__column-2 {
+    padding-left: 8px;
+    padding-right: 8px;
+    flex: 0 0 16.6667%;
+    max-width: 16.6667%;
 }
 
-.grid__column-10{
-    margin-left: 5px;
-    margin-right: 5px;
-    width: 83.3334%;
+.grid__column-2-4 {
+    padding-left: 8px;
+    padding-right: 8px;
+    flex: 0 0 19.25%;
+    max-width: 19.25%;
 }
 
-/* Animation */
+.grid__column-10 {
+    padding-left: 8px;
+    padding-right: 8px;
+    flex: 0 0 83.3334%;
+    max-width: 83.3334%;
+}
+
+/* ==================== 5 SẢN PHẨM / HÀNG (MỚI) ==================== */
+.grid__row.product__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-right: -8px;
+    row-gap: 20px;
+}
+
+.grid__column-5 {
+    padding-left: 8px;
+    padding-right: 8px;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+@media (max-width: 1024px) {
+    .grid__column-5 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media (max-width: 767px) {
+    .grid__column-5 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .grid__row.product__wrap {
+        justify-content: center;
+    }
+}
+
+/* ==================== ANIMATION ==================== */
 @keyframes growth {
-    from{
-        transform: scale(var(--growth-form));
-    }
-    to{
-        transform: scale(var(--growth-to));
-    }
+    from { transform: scale(var(--growth-from, 0.7)); }
+    to   { transform: scale(var(--growth-to, 1)); }
 }
-/* Modal */
-.modal{
+
+/* ==================== MODAL ==================== */
+.modal {
     position: fixed;
     top: 0;
     right: 0;
@@ -78,61 +121,51 @@ html {
     animation: growth linear 0.1s;
 }
 
-.modal__overlay{
+.modal__overlay {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.4);
 }
 
-.modal__body{
-    --growth-form: 0.7;
+.modal__body {
+    --growth-from: 0.7;
     --growth-to: 1;
     margin: auto;
     position: relative;
+    z-index: 1;
     animation: growth linear 0.1s;
 }
 
-/* Buton style */
-.btn{
+/* ==================== BUTTON ==================== */
+.btn {
     min-width: 142px;
     height: 36px;
-    text-decoration: none;
     border: none;
     border-radius: 2px;
+    padding: 0 12px;
     font-size: 1.5rem;
-    padding: 0;
     cursor: pointer;
     color: var(--text-color);
-    background-color: var(--white-color);
+    background: var(--white-color);
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
     line-height: 1.6rem;
 }
-.btn.btn--normal:hover{
-    background-color: rgba(0, 0, 0, 0.05);
-}
 
-.btn.btn--size-s{
-    height: 32px;
-    font-size: 1.2rem;
-}
-
-.btn.btn--primary{
-    color: var(--white-color);
-    background-color: var(--primary-color);
-}
-
-.btn.btn--disabled{
+.btn:hover { background: rgba(0,0,0,0.05); }
+.btn.btn--primary { background: var(--primary-color); color: #fff; }
+.btn.btn--size-s { height: 32px; font-size: 1.2rem; }
+.btn.btn--disabled {
     color: #949494;
     cursor: default;
     background-color: #c3c3c3;
 }
 
-/* selection */
-
-.select-input{
+/* ==================== SELECT INPUT (GIỮ FILE CŨ) ==================== */
+.select-input {
     position: relative;
     min-width: 200px;
     height: 34px;
@@ -144,18 +177,12 @@ html {
     align-items: center;
 }
 
-.select-input__label{
-    font-size: 1.4rem;
-}
+.select-input__label { font-size: 1.4rem; }
+.select-input__icon { font-size: 1.2rem; color: var(--black-color); }
 
-.select-input__icon{
-    font-size: 1.2rem;
-    color: var(--black-color);
-}
-.select-input:hover .select-input__list{
-    display: block;
-}
-.select-input__list{
+.select-input:hover .select-input__list { display: block; }
+
+.select-input__list {
     position: absolute;
     left: 0;
     right: 0;
@@ -168,7 +195,7 @@ html {
     z-index: 1;
 }
 
-.select-input__link{
+.select-input__link {
     text-decoration: none;
     font-size: 1.4rem;
     display: block;
@@ -176,28 +203,24 @@ html {
     padding: 6px 0;
 }
 
-.select-input__link:hover{
-    color: var(--primary-color);   
-}
+.select-input__link:hover { color: var(--primary-color); }
 
-/* pagination */
-
-.pagination{
+/* ==================== PAGINATION (GIỮ FILE CŨ) ==================== */
+.pagination {
     display: flex;
     align-items: center;
     justify-content: center;
     list-style: none;
 }
 
-.pagination-item{
-    margin: 0 12px;
-}
-.pagination-item--active .pagination-item__link{
+.pagination-item { margin: 0 12px; }
+
+.pagination-item--active .pagination-item__link {
     color: var(--white-color);
     background-color: var(--primary-color);
 }
 
-.pagination-item__link{ 
+.pagination-item__link {
     display: block;
     text-decoration: none;
     font-size: 2rem;
@@ -208,9 +231,29 @@ html {
     line-height: 30px;
     text-align: center;
     border-radius: 2px;
-    font-style: normal;
 }
 
-.pagination-item__icon{
+/* ==================== SẢN PHẨM ĐẸP HƠN ==================== */
+.home-product-item {
+    display: block;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+}
 
+.home-product-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    z-index: 10;
+}
+
+.home-product-item__img {
+    width: 100%;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
