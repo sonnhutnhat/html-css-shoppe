@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loa Gaming LED RGB - Shoppe</title>
+  <title>Đang tải sản phẩm... - Shoppe</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
   <link rel="stylesheet" href="assets/css/base.css" />
   <link rel="stylesheet" href="assets/css/main.css" />
@@ -20,41 +20,40 @@
       <div class="grid">
         <div class="product-detail-container">
           <div class="product-detail-row">
+
+            <!-- Ảnh sản phẩm -->
             <div class="product-gallery">
-              <img src="https://down-vn.img.susercontent.com/file/0993d53a05b0480041fd62130e275c9c"
-                alt="Loa Gaming LED RGB" class="product-main-img">
+              <img src="" alt="" class="product-main-img" id="product-img">
             </div>
 
+            <!-- Thông tin sản phẩm -->
             <div class="product-info">
-              <h1 class="product-title">
-                Loa Máy Tính Gaming LED RGB 10W USB – Âm Thanh Sống Động, Thiết Kế Cực Chất
-              </h1>
+              <h1 class="product-title" id="product-title">Đang tải...</h1>
 
               <div class="product-rating">
-                <div style="color:#ee4d2d">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                    class="fas fa-star"></i><i class="fas fa-star"></i>
-                  <span style="color:#333; margin-left:8px;">(128 đánh giá)</span>
+                <div class="product-stars" id="product-stars">
+                  <!-- JS sẽ tự thêm sao -->
                 </div>
-                <span style="color:#767676">88 đã bán</span>
+                <span class="product-reviews" id="product-reviews">(0 đánh giá)</span>
+                <span class="product-sold" id="product-sold">0 đã bán</span>
               </div>
 
               <div class="product-price-box">
-                <span class="product-price-old">1.200.000đ</span>
-                <span class="product-price-current">999.000đ</span>
-                <span class="product-sale-badge">-16%</span>
+                <span class="product-price-old" id="product-old-price">0đ</span>
+                <span class="product-price-current" id="product-price">0đ</span>
+                <span class="product-sale-badge" id="product-sale">-0%</span>
               </div>
 
               <div class="product-variant">
-                <div class="variant-title">Màu sắc</div>
-                <button class="variant-btn active">Đen</button>
-                <button class="variant-btn">Trắng</button>
+                <div class="variant-title">Số lượng</div>
+                <button class="variant-btn active">500g</button>
+                <button class="variant-btn">1kg</button>
               </div>
 
               <div class="quantity-box">
                 <span style="font-size:1.6rem">Số lượng</span>
                 <input type="number" value="1" min="1" class="quantity-input">
-                <span style="color:#ee4d2d">88 sản phẩm có sẵn</span>
+                <span class="product-stock" id="product-stock">100 sản phẩm có sẵn</span>
               </div>
 
               <div class="product-actions">
@@ -68,9 +67,12 @@
         </div>
       </div>
     </div>
+
+    <div id="footer-container"></div>
   </div>
-  <div id="footer-container"></div>
+
   <script src="js/components.js"></script>
+  <script src="js/product-detail.js"></script>
 </body>
 
 </html>
